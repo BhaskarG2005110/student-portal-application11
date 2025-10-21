@@ -1,0 +1,60 @@
+// Base class
+class Animal {
+    String name;
+
+    // Constructor
+    Animal(String name) {
+        this.name = name;
+    }
+
+    // Method to be overridden (Polymorphism)
+    void makeSound() {
+        System.out.println("Some animal sound");
+    }
+
+    void displayInfo() {
+        System.out.println("Animal: " + name);
+    }
+}
+
+// Subclass Dog (inherits from Animal)
+class Dog extends Animal {
+    Dog(String name) {
+        super(name);
+    }
+
+    // Overriding method
+    @Override
+    void makeSound() {
+        System.out.println(name + " says: Woof!");
+    }
+}
+
+// Subclass Cat (inherits from Animal)
+class Cat extends Animal {
+    Cat(String name) {
+        super(name);
+    }
+
+    // Overriding method
+    @Override
+    void makeSound() {
+        System.out.println(name + " says: Meow!");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects (Polymorphism)
+        Animal myDog = new Dog("Buddy");
+        Animal myCat = new Cat("Whiskers");
+
+        // Accessing methods
+        myDog.displayInfo();
+        myDog.makeSound();
+
+        myCat.displayInfo();
+        myCat.makeSound();
+    }
+}
